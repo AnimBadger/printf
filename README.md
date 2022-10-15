@@ -4,3 +4,4 @@ the repository holds all functions for our printf task.
 
 PARTNERS NAMES ARE:
 1. Iyenoma Provo.
+2. Stephen Ansah Anim
