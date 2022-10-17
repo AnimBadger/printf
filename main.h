@@ -5,10 +5,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-int _puts(char *str);
+int _puts(va_list s);
 int _putchar(int c);
-int _strlen(char *str);
-int intlen(int val);
 int _printf(const char *format, ...);
 
 /**
@@ -19,7 +17,7 @@ int _printf(const char *format, ...);
 
 typedef struct spec
 {
-	char id*;
+	char id;
 	int (*fptr)(va_list);
 }specifiers;
 
