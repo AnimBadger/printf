@@ -8,7 +8,7 @@
 int _puts(char *str);
 int _putchar(int c);
 int _strlen(char *str);
-
+int intlen(int val);
 int _printf(const char *format, ...);
 
 #endif
