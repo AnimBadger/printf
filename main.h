@@ -11,4 +11,16 @@ int _strlen(char *str);
 int intlen(int val);
 int _printf(const char *format, ...);
 
+/**
+ * struct spec - structure that define specifiers
+ * @:id: id specifier
+ * @fptr: function pointer
+ */
+
+typedef struct spec
+{
+	char id*;
+	int (*fptr)(va_list);
+}specifiers;
+
 #endif
