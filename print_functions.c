@@ -3,13 +3,16 @@
 /**
 * _putchar -  user output function for character
 * Description: it is used to print character output to "stdio"
-* @c: input type of variable need of type "char"
-* Return: char c
+* @chr: input type of variable need of type "char"
+* Return: 1 to end
 */
 
-int _putchar(int c)
+int _putchar(va_list chr)
 {
-	return (write(1, &c, 1));
+	char character;
+	character = va_arg(chr, int);
+	write(1, &character, 1);
+	return (1);
 }
 
 /**

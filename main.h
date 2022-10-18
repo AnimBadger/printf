@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 int _puts(va_list s);
-int _putchar(int c);
+int _putchar(va_list chr);
 int _printf(const char *format, ...);
 
 /**
