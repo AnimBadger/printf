@@ -9,8 +9,9 @@
 /* functions prototype */
 int _puts(va_list s);
 int _putchar(va_list chr);
-int _printf(const char *format, ...);
 int _print_mod(va_list mod);
+int _print_int(va_list num);
+int _printf(const char *format, ...);
 
 /**
  * spec - structure that define specifiers
