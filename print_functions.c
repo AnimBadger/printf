@@ -54,3 +54,41 @@ int _print_mod(va_list ap)
 	write(1, &mod, 1);
 	return (1);
 }
+
+/**
+ * _print_int - a function that prints integers
+ * @num: a variable of list argument
+ * Return: value
+ */
+int _print_int(va_list num)
+{
+	int integer;
+	int count;
+	int expo;
+	int buff;
+	char negative;
+
+	count = 0;
+	expo = 1;
+	negative = '-';
+	integer = va_arg(num, int);
+	if (integer < 0)
+	{
+		write(1, &negative, 1);
+		count += 1;
+		integer *= -1;
+	}
+	while ((integer / expo) > 9)
+	{
+		expo *= 10;
+	}
+	while (expo != 0)
+	{
+		buff = integer / expo + '0';
+		write(1, &buff, 1);
+		count += 1;
+		integer = integer % expo;
+		expo = expo / 10;
+	}
+	return (count);
+}
