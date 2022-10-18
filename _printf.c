@@ -6,4 +6,11 @@
  * Return: 0 means success
  */
 
-int _printf(const char *format, ...);
+int _printf(const char *format, ...)
+{
+	specifiers formatters[] = 
+	{
+		{'c', _putchar},
+		{'s', _puts}
+	};
+}
