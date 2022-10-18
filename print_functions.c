@@ -30,13 +30,25 @@ int _puts(va_list s)
 	str = va_arg(s, char*);
 	count = 0;
 	index = 0;
-	while (str[index] && str[index] != '\0')
+	for (index = 0; str[index] != '\0'; index++)
 	{
 		write(1, &str[index],1);
-		index++;
 		count += 1;
 	}
-	index++;
 	return (count);
 }
 
+/**
+ * _print_mod - print '%'
+ * @ap: unused list argument
+ * Return: 1 on success
+ */
+int _print_mod(va_list ap)
+{
+	char mod;
+
+	mod = '%';
+	(void) ap;
+	write(1, &mod, 1);
+	return (1);
+}
