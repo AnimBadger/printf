@@ -11,7 +11,10 @@ int _printf(const char *format, ...)
 	specifiers formatters[] = {
 		{'c', _putchar},
 		{'s', _puts},
-		{'%', _print_mod}
+		{'%', _print_mod},
+		{'d', _print_int},
+		{'i', _print_int},
+		{'\0', NULL}
 	};
 	int index, select_spec, counter;
 	va_list list;
