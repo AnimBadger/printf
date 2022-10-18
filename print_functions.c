@@ -10,7 +10,9 @@
 int _putchar(va_list chr)
 {
 	char character;
+
 	character = va_arg(chr, int);
+
 	write(1, &character, 1);
 	return (1);
 }
@@ -18,7 +20,7 @@ int _putchar(va_list chr)
 /**
  * _puts - user output function for strings
  * Description: it is used to print string output to "stdio"
- * @str: a variable argument list element
+ * @s: a variable argument list element
  * Return: char str
  */
 int _puts(va_list s)
@@ -32,7 +34,7 @@ int _puts(va_list s)
 	index = 0;
 	for (index = 0; str[index] != '\0'; index++)
 	{
-		write(1, &str[index],1);
+		write(1, &str[index], 1);
 		count += 1;
 	}
 	return (count);

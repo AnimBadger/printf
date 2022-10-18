@@ -8,8 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	specifiers formatters[] = 
-	{
+	specifiers formatters[] = {
 		{'c', _putchar},
 		{'s', _puts},
 		{'%', _print_mod}
