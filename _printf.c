@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 		{'%', _print_mod},
 		{'d', _print_int},
 		{'i', _print_int},
+		{'b', _print_binary},
 		{'\0', NULL}
 	};
 	int index, select_spec, counter;
@@ -23,7 +24,7 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	for (index = 0; format[index] != '\0'; index++)
 	{
-		if (format[index] == '%')
+		if (format[index] && format[index] == '%')
 		{
 			format++;
 			for (select_spec = 0; formatters[select_spec].id != '\0'; select_spec++)
