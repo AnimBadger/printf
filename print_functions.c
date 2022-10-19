@@ -32,6 +32,11 @@ int _puts(va_list s)
 	str = va_arg(s, char*);
 	count = 0;
 	index = 0;
+
+	if (str == NULL)
+	{
+		str = "(nil)";
+	}
 	for (index = 0; str[index] != '\0'; index++)
 	{
 		write(1, &str[index], 1);
