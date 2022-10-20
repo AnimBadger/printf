@@ -100,7 +100,7 @@ int _print_int(va_list num)
 
 /**
  * _print_binary - prints binary numbers
- * @num: variable for number
+ * @bin: variable for number
  * Return: count;
  */
 int _print_binary(va_list bin)
@@ -126,7 +126,7 @@ int _print_binary(va_list bin)
 			n /= 2;
 			rem = 0;
 			count += 1;
-			elements += 1;	
+			elements += 1;
 		}
 		for (j = elements - 1; j >= 0; j--)
 		{
