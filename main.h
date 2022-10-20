@@ -20,15 +20,17 @@ int _printf(const char *format, ...);
 #define MAX_BIT 32 /* maximum bit of an integer */
 
 /**
- * spec - structure that define specifiers
- * @:id: case identifier
+ * struct spec - structure that define specifiers
+ * @id: case identifier
  * @fptr: function pointer
+ * Description: datatype defined to act as a selector type
+ * for operations
  */
 
 typedef struct spec
 {
 	char id;
 	int (*fptr)(va_list);
-}specifiers;
+} specifiers;
 
 #endif

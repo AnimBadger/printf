@@ -36,9 +36,9 @@ int _puts(va_list s)
 
 	if (str == NULL)
 	{
-		str = "(nil)";
+		str = "(null)";
 	}
-	for (index = 0; str[index] != '\0'; index++)
+	for (index = 0; str[index] != '\0'; ++index)
 	{
 		write(1, &str[index], 1);
 		count += 1;
@@ -69,31 +69,35 @@ int _print_mod(va_list ap)
 int _print_int(va_list num)
 {
 	int n, ex;
-	int count, i, buff;
-	int mod;
+	int count;
+	int i;
+	int buff;
 	int div;
 	unsigned int new_n;
 
 	n = va_arg(num, int);
-	count, i, buff = 0;
-	if (n < 0 )
+	new_n = n;
+	count = 0;
+	i = 0;
+	buff = 0;
+	if (n < 0)
 	{
 		write(1, "-", 1);
-		n = n * (-1);
+		new_n = new_n * (-1);
 		count += 1;
 	}
 	div = 1;
-	while ((n / div) > 9)
+	while ((new_n / div) > 9)
 	{
 		div = div * 10;
 	}
 	while (div != 0)
 	{
-		i = n / div;
+		i = new_n / div;
 		buff = i + '0';
 		write(1, &buff, 1);
 		ex = i * div;
-		n = n - ex;
+		new_n = new_n - ex;
 		div = div / 10;
 		count++;
 	}
@@ -108,24 +112,26 @@ int _print_int(va_list num)
 int _print_binary(va_list bin)
 {
 	int i, j, rem, count, elements;
-	unsigned int n;
+	int n;
 	unsigned int *ptr;
+	unsigned int new_n;
 
 	count = 0;
 	elements = 0;
 	n = va_arg(bin, int);
-	if (n == 0)
+	new_n = n;
+	if (new_n == 0)
 		_printf("%d", 0);
-	if (n > 0)
+	if (new_n > 0)
 	{
 		ptr = malloc(sizeof(unsigned int) * MAX_BIT);
 		if (!ptr)
 			return (-1);
-		for (i = 0; n > 0; i++)
+		for (i = 0; new_n > 0; i++)
 		{
-			rem = n % 2;
+			rem = new_n % 2;
 			ptr[i] = rem;
-			n /= 2;
+			new_n /= 2;
 			rem = 0;
 			count += 1;
 			elements += 1;
