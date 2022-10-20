@@ -33,6 +33,7 @@ int _printf(const char *format, ...)
 				{
 					formatters[select_spec].fptr(list);
 					counter += 1;
+					break;
 				}
 			}
 		}
