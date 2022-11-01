@@ -16,17 +16,20 @@ int _printf(const char *format, ...)
 		{'d', _print_int},
 		{'i', _print_int},
 		{'b', _print_binary},
+		{'u', op_uint},
+		{'o', op_octal},
+		{'X', op_HEX},
+		{'x', op_hex},
 		{'\0', NULL}
 	};
-	int index, select_spec, count;
-	int len;
+	int index, select_spec, count, len;
 	va_list list;
 
-	count = 0;
+	count = select_spec = 0;
 	va_start(list, format);
 	for (index = 0; format[index] != '\0'; index++)
 	{
-		if (format[index] && format[index] == '%')
+		if (format[index] == '%')
 		{
 			format++;
 			for (select_spec = 0; formatters[select_spec].id != '\0'; select_spec++)

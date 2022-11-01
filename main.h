@@ -11,8 +11,16 @@ int _puts(va_list s);
 int _putchar(va_list chr);
 int _print_mod(va_list mod);
 int _print_int(va_list num);
-int print_unsigned_int(unsigned int num);
 int _print_binary(va_list bin);
+int op_uint(va_list num);
+int op_octal(va_list num);
+int op_hex(va_list num);
+int op_HEX(va_list num);
+
+int print_uint(unsigned int num);
+int print_octal(unsigned int n);
+int print_hex(unsigned int n);
+int print_HEX(unsigned int n);
 
 int _printf(const char *format, ...);
 
