@@ -120,8 +120,12 @@ int _print_binary(va_list bin)
 	elements = 0;
 	n = va_arg(bin, int);
 	new_n = n;
-	if (new_n == 0)
-		_printf("%d", 0);
+
+	if (n == 0)
+	{
+		write(1, "0", 1);
+		count += 1;
+	}
 	if (new_n > 0)
 	{
 		ptr = malloc(sizeof(unsigned int) * MAX_BIT);
